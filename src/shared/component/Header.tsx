@@ -1,9 +1,46 @@
-import React from 'react'
+import React from "react"
+import newCalBar from "../icon/header/newCalBar.svg"
+import search from "../icon/header/search.svg"
+import avatar from "../img/header/avatar.png"
+import arrow from "../icon/header/arrow.svg"
 
 export function Header() {
   return (
-    <div className="bg-white h-[64px] shadow-[0px_4px_5px_#E9EDF3]">
-
+    <div className="w-full bg-white h-[64px] shadow-small flex flex-row justify-around items-center">
+      <div className="text-[#899CB1]">Среда, 13 окт.</div>
+      <div className="flex flex-row gap-[56px]">
+        <div className="flex flex-col gap-[7px]">
+          <div>
+            <span className="text-[14px] text-[#122945]">Новые звонки </span>
+            <span className="text-[14px] text-[#00A775]">20 из 30 шт</span>
+          </div>
+          <img src={newCalBar} alt="" />
+        </div>
+        <div className="flex flex-col gap-[7px]">
+          <div>
+            <span className="text-[14px] text-[#122945]">Качество разговоров </span>
+            <span className="text-[14px] text-[#00A775]">40%</span>
+          </div>
+          <img src={newCalBar} alt="" />
+        </div>
+        <div className="flex flex-col gap-[7px]">
+          <div>
+            <span className="text-[14px] text-[#122945]">Конверсия в заказ </span>
+            <span className="text-[14px] text-[#00A775]">67%</span>
+          </div>
+          <img src={newCalBar} alt="" />
+        </div>
+      </div>
+      <div className="flex flex-row gap-[64px]">
+        <img src={search} alt=""/>
+        <div className="flex gap-[47px]">
+          <div className="flex flex-row justify-center items-center gap-[10px]">
+            <span className="text-[15px] text-[#899CB1]">ИП Сидорова Александра Михайловна</span>
+            <img src={arrow} alt=""/>
+          </div>
+          <img src={avatar} alt=""/>
+        </div>
+      </div>
     </div>
   )
 }

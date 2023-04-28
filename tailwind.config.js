@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "mainBackground": "#E5E5E5"
+        "mainBackground": "#F1F4F9"
       },
       boxShadow: {
-        "small": "0px 4px 5px #E9EDF3"
+        "small": "0 4px 5px 0 rgba(0, 0, 0, 0.05)"
       }
     },
   },

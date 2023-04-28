@@ -37,7 +37,6 @@ export function Navbar() {
       <div className="pt-5 pl-[12px] h-[80px]">
         <img src={logo} alt="" />
       </div>
-
       {items.map((item, idx) => (
         <div key={idx}
           className={`w-[240px] h-[52px] flex flex-row flex justify-between items-center gap-[13px] pl-[13px] ${

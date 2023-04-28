@@ -3,7 +3,7 @@ import { Header } from "./Header"
 
 export function Layout() {
   return (
-    <div className="w-full h-full bg-mainBackground">
+    <div className="bg-mainBackground w-full h-full">
       <Header />
     </div>
   )
