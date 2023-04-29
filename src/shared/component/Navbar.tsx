@@ -11,6 +11,9 @@ import report from "../icon/Navbar/report.svg"
 import lib from "../icon/Navbar/lib.svg"
 import settings from "../icon/Navbar/setting.svg"
 import newIcon from "../icon/Navbar/new.svg"
+import { PrimaryButton } from "./PrimaryButton"
+import warn from "../icon/PrimaryButton/warn.svg"
+import add from "../icon/PrimaryButton/add.svg"
 
 interface MenuItem {
   title: string
@@ -34,12 +37,13 @@ const items: MenuItem[] = [
 export function Navbar() {
   return (
     <div className="w-[240px] h-[100%] bg-[#091336]">
-      <div className="pt-5 pl-[12px] h-[80px]">
+      <div className="pt-5 pl-[12px] h-[80px] cursor-pointer">
         <img src={logo} alt="" />
       </div>
       {items.map((item, idx) => (
-        <div key={idx}
-          className={`w-[240px] h-[52px] flex flex-row flex justify-between items-center gap-[13px] pl-[13px] ${
+        <div
+          key={idx}
+          className={`w-[240px] h-[52px] flex flex-row flex justify-between items-center gap-[13px] pl-[13px] hover:bg-[#0024CB] cursor-pointer ${
             item.inFocus ? "text-white bg-[#D8E4FB]/[0.32]" : "text-white/[0.6]"
           } `}
         >
@@ -54,6 +58,10 @@ export function Navbar() {
           )}
         </div>
       ))}
+      <div className="mt-[80px] flex flex-col gap-[45px] items-center justify-center">
+        <PrimaryButton title={"Добавить заказ"} svg={add} />
+        <PrimaryButton title={"Оплата"} svg={warn} />
+      </div>
     </div>
   )
 }

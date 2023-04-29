@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "mainBackground": "#F1F4F9"
+        "mainBackground": "#F1F4F9",
+        "textHeader": "#899CB1"
       },
       boxShadow: {
         "small": "0 4px 5px 0 rgba(0, 0, 0, 0.05)"
