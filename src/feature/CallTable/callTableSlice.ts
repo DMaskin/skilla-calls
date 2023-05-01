@@ -16,7 +16,6 @@ export const callTableSlice = createSlice({
   reducers: {
     setCalls: (state, action: PayloadAction<ICall[]>) => {
       state.calls = action.payload
-      console.log(state.calls)
     },
   },
 })

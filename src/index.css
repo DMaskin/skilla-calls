@@ -12,9 +12,11 @@ body {
 .callsTable {
   display: grid;
   grid-template-columns:
+    minmax(36px, 0.05fr)
     minmax(60px, 0.1fr)
     minmax(60px, 0.1fr)
     minmax(60px, 1fr)
+    minmax(20px, 0.3fr)
     minmax(30px, 3fr)
     minmax(30px, 2fr)
     minmax(30px, 2fr)
