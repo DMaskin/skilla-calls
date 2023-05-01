@@ -1,6 +1,6 @@
 import React from "react"
 import { Header } from "./Header"
-import {CallTable} from "../../feature/CallTable/CallTable";
+import { CallTable } from "../../feature/CallTable/CallTable"
 
 export function Layout() {
   return (

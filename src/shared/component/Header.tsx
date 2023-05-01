@@ -1,8 +1,8 @@
 import React from "react"
-import newCalBar from "../icon/header/newCalBar.svg"
-import search from "../icon/header/search.svg"
-import avatar from "../img/header/avatar.png"
-import arrow from "../icon/header/arrow.svg"
+import newCalBar from "../icon/Header/newCalBar.svg"
+import search from "../icon/Header/search.svg"
+import avatar from "../img/Header/avatar.png"
+import arrow from "../icon/Header/arrow.svg"
 
 export function Header() {
   return (
