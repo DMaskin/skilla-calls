@@ -58,7 +58,7 @@ export function Navbar() {
           )}
         </div>
       ))}
-      <div className="mt-[80px] flex flex-col gap-[45px] items-center justify-center">
+      <div className="mt-[80px] flex flex-col gap-[32px] items-center justify-center">
         <PrimaryButton title={"Добавить заказ"} svg={add} />
         <PrimaryButton title={"Оплата"} svg={warn} />
       </div>
