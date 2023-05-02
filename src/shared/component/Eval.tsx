@@ -3,7 +3,7 @@ import great from "../icon/Eval/3dot.svg"
 import good from "../icon/Eval/2dot.svg"
 import bad from "../icon/Eval/dot.svg"
 
-type EvalType = "Отлично" | "Хорошо" | "Плохо"
+export type EvalType = "Отлично" | "Хорошо" | "Плохо"
 
 interface EvalProps {
   title: EvalType

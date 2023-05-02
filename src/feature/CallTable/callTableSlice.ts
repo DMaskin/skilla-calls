@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { ICall } from "../../model/ICall"
 import { RootState } from "../../app/store"
+import { getRandomStatus } from "../../shared/lib/utils"
 
 export interface CallTableState {
   calls: ICall[]
@@ -15,7 +16,9 @@ export const callTableSlice = createSlice({
   initialState,
   reducers: {
     setCalls: (state, action: PayloadAction<ICall[]>) => {
-      state.calls = action.payload
+      state.calls = action.payload.map((call) => {
+        return { ...call, evalStatus: getRandomStatus() }
+      })
     },
   },
 })

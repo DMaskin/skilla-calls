@@ -3,7 +3,7 @@ import play from "../icon/AudioCart/play.svg"
 import download from "../icon/AudioCart/download.svg"
 
 interface AudioCartProps {
-  time: number
+  time: string
 }
 
 export function AudioCart({ time }: AudioCartProps) {
