@@ -30,7 +30,7 @@ export function CallTable() {
   }
 
   return (
-    <div className="bg-white h-[calc(100%-64px-75px-80px)] ml-[120px] mr-[120px] mt-[20px] rounded-[8px] shadow-small overflow-y-scroll scrollable">
+    <div className="bg-white h-[calc(100%-64px-75px-80px)] ml-[120px] mr-[120px] mt-[15px] rounded-[8px] shadow-small overflow-y-scroll scrollable">
       <div className="h-[61px] border-b-[1px] border-b-solid border-b-[#EAF0FA] text-textHeader text-[14px] callsTable">
         {headers.map((title, idx) => (
           <div
