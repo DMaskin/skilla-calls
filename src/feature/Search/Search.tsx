@@ -17,12 +17,12 @@ export function Search() {
   }
 
   return (
-    <div className="relative w-[560px]">
+    <div className="relative max-w-[260px]">
       <img src={searchIcon} className="absolute py-3 px-[18px]" alt="" />
       <input
         type="text"
         placeholder={"Поиск по звонкам"}
-        className="indent-[25px] py-2 bg-mainBackground outline-0 px-4 w-full h-[42px] focus:bg-white rounded-[48px] focus:border-[1px] focus:border-[#002CFB]"
+        className="indent-[25px] py-2 bg-mainBackground outline-0 px-4 w-full max-h-[35px] focus:bg-white rounded-[48px] focus:border-[1px] focus:border-[#002CFB]"
         value={search}
         onChange={(e) => {
           searchChangeHandler(e.target.value)

@@ -66,7 +66,7 @@ export function Call({ call }: { call: ICall }) {
       </div>
       <div className="h-full w-full flex justify-end items-center">
         <span className="mr-[40px]">
-          {call.time ? <AudioCart time={makeTimeFormat(call.time)} /> : makeTimeFormat(call.time)}
+          {call.time ? <AudioCart time={makeTimeFormat(call.time)} id={call.record} /> : makeTimeFormat(call.time)}
         </span>
       </div>
     </div>

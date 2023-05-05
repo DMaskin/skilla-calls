@@ -1,16 +1,47 @@
-import React from "react"
-import play from "../icon/AudioCart/play.svg"
+import React, { useState } from "react"
 import download from "../icon/AudioCart/download.svg"
+import { fetchAudio } from "../../feature/CallTable/callTableAPI"
+import play from "../icon/AudioCart/play.svg"
+import stop from "../icon/AudioCart/stop.svg"
+
 
 interface AudioCartProps {
   time: string
+  id: string
 }
 
-export function AudioCart({ time }: AudioCartProps) {
+export function AudioCart({ time, id }: AudioCartProps) {
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null)
+  const [isPlaying, setIsPlaying] = useState<boolean | null>(null)
+
+  function clickHandler() {
+    if (isPlaying) {
+      audio?.pause()
+      setIsPlaying(false)
+    }
+    if (!isPlaying) {
+      audio?.play()
+      setIsPlaying(true)
+    }
+    if (isPlaying === null) {
+      fetchAudio(id).then((res) => {
+        const blob = new Blob([res], { type: "audio/mp3" })
+        const downloadUrl = window.URL.createObjectURL(blob)
+        let audio = new Audio(downloadUrl)
+        setAudio(audio)
+        setIsPlaying(true)
+        audio?.play()
+          .finally(() => {
+            window.URL.revokeObjectURL(downloadUrl)
+          })
+      })
+    }
+  }
+
   return (
     <div className="w-[352px] h-[48px] rounded-[48px] bg-[#EAF0FA] flex justify-center items-center">
       <span className="text-[#122945] text-[14px] mr-3">{time}</span>
-      <img src={play} alt="" className="mr-2" />
+      <img src={(isPlaying === null || !isPlaying) ? play : stop} onClick={clickHandler} alt="" className="mr-2" />
       <div className="w-[164px] h-[4px] bg-[#ADBFDF] mr-[18px]" />
       <img src={download} alt="" />
     </div>
