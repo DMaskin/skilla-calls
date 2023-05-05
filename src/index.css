@@ -12,22 +12,13 @@ body {
 .callsTable {
   display: grid;
   grid-template-columns:
-    minmax(36px, 0.05fr)
-    minmax(60px, 0.1fr)
-    minmax(60px, 0.1fr)
-    minmax(60px, 1fr)
-    minmax(20px, 0.3fr)
-    minmax(30px, 3fr)
-    minmax(30px, 2fr)
-    minmax(30px, 2fr)
-    minmax(30px, 4fr);
-}
-
-.noSelectable {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    minmax(36px, 1fr)
+    minmax(60px, 2fr)
+    minmax(60px, 2fr)
+    minmax(60px, 10fr)
+    minmax(20px, 6fr)
+    minmax(30px, 30fr)
+    minmax(30px, 20fr)
+    minmax(30px, 20fr)
+    minmax(30px, 40fr);
 }

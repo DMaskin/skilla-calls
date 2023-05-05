@@ -11,13 +11,10 @@ export function Call({ call }: { call: ICall }) {
   return (
     <div
       key={call.id}
-      className="h-[65px] grid grid-cols-7 border-b-[1px] border-b-solid border-b-[#EAF0FA] text-[15px] cursor-pointer callsTable hover:bg-[rgba(212,223,243,0.17)] group"
+      className="h-[65px] grid grid-cols-7 border-b-[1px] border-b-solid border-b-[#EAF0FA] text-[15px] cursor-pointer callsTable hover:bg-[rgba(212,223,243,0.17)] group call"
     >
       <div className="opacity-0 group-hover:opacity-100 h-full w-full flex justify-start items-center ml-3">
-        <input
-          type="checkbox"
-          className="w-4 h-4 border-[2px] border-[#ADBFDF] invisible group-hover/calls:visible"
-        />
+        <input type="checkbox" className="w-4 h-4 border-[2px] border-[#ADBFDF] invisible group-hover/calls:visible" />
       </div>
       <div>
         <span className="h-full w-full flex justify-start items-center">
@@ -56,7 +53,12 @@ export function Call({ call }: { call: ICall }) {
       </div>
       <div className="h-full w-full flex justify-end items-center">
         <span className="mr-[40px]">
-          {call.time ? <AudioCart time={makeTimeFormat(call.time)} id={call.record} /> : makeTimeFormat(call.time)}
+          {call.time > 0 && (
+            <>
+              <AudioCart time={makeTimeFormat(call.time)} id={call.record} />
+              <div className="group-hover-[.call]:hidden">{makeTimeFormat(call.time)}</div>
+            </>
+          )}
         </span>
       </div>
     </div>
