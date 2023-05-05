@@ -1,6 +1,5 @@
-import React, { useState } from "react"
+import React from "react"
 import { ICall } from "../../model/ICall"
-import { CheckBox } from "../../shared/component/CheckBox"
 import { Eval, EvalType } from "../../shared/component/Eval"
 import { AudioCart } from "../../shared/component/AudioCart"
 import { makeTimeFormat } from "../../shared/lib/utils"
@@ -9,28 +8,17 @@ import outgoing from "../../shared/icon/CallTable/outgoing.svg"
 import incoming from "../../shared/icon/CallTable/incoming.svg"
 
 export function Call({ call }: { call: ICall }) {
-  const [checkBoxVisible, setCheckBoxVisible] = useState(false)
-
-  function mouseEnterHandler() {
-    setCheckBoxVisible(true)
-  }
-
-  function mouseLeaveHandler() {
-    setCheckBoxVisible(false)
-  }
-
   return (
     <div
       key={call.id}
-      className={
-        checkBoxVisible
-          ? "h-[65px] grid grid-cols-7 border-b-[1px] border-b-solid border-b-[#EAF0FA] text-[15px] cursor-pointer callsTable bg-[rgba(212,223,243,0.17)]"
-          : "h-[65px] grid grid-cols-7 border-b-[1px] border-b-solid border-b-[#EAF0FA] text-[15px] cursor-pointer callsTable"
-      }
-      onMouseEnter={mouseEnterHandler}
-      onMouseLeave={mouseLeaveHandler}
+      className="h-[65px] grid grid-cols-7 border-b-[1px] border-b-solid border-b-[#EAF0FA] text-[15px] cursor-pointer callsTable hover:bg-[rgba(212,223,243,0.17)] group"
     >
-      <div className="h-full w-full flex justify-start items-center ml-3">{checkBoxVisible ? <CheckBox /> : null}</div>
+      <div className="opacity-0 group-hover:opacity-100 h-full w-full flex justify-start items-center ml-3">
+        <input
+          type="checkbox"
+          className="w-4 h-4 border-[2px] border-[#ADBFDF] invisible group-hover/calls:visible"
+        />
+      </div>
       <div>
         <span className="h-full w-full flex justify-start items-center">
           <img src={call.in_out ? incoming : outgoing} alt="" />
@@ -44,7 +32,9 @@ export function Call({ call }: { call: ICall }) {
           <img width={32} height={32} src={call.person_avatar} alt="" />
         </span>
       </div>
-      <div className="flex items-center justify-end mr-[6px]">{checkBoxVisible && <img src={phone} alt="" />}</div>
+      <div className="opacity-0 group-hover:opacity-100 flex items-center justify-end mr-[6px]">
+        <img src={phone} alt="" />
+      </div>
       <div className="h-full w-full  flex justify-start items-center">
         <div>{call.in_out ? call.from_number : call.to_number}</div>
       </div>

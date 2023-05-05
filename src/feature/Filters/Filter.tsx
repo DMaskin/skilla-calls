@@ -19,14 +19,13 @@ export function Filter({ filter }: { filter: IFilter }) {
         {filter.options.map((item: string) => (
           <li
             key={item}
-            onClick={(e) => setCurrItem(item)}
-            className=" py-2 px-4 text-[#899CB1] hover:bg-[#D8E4FB] hover:text-[#122945] transition-colors cursor-pointer first:text-[#002CFB] first:hover:bg-white first:hover:text-[#002CFB]"
+            onClick={() => setCurrItem(item)}
+            className="py-2 px-4 text-[#899CB1] hover:bg-[#D8E4FB] hover:text-[#122945] transition-colors cursor-pointer first:text-[#002CFB] first:hover:bg-white first:hover:text-[#002CFB] first:rounded-t last:rounded-b"
           >
             {item}
           </li>
         ))}
       </ul>
-      {/*)}*/}
     </div>
   )
 }
