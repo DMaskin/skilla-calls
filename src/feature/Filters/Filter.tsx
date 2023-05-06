@@ -1,20 +1,27 @@
 import React, { useState } from "react"
-import down from "../../shared/icon/Filters/down.svg"
+import { ReactComponent as DownSvg } from "../../shared/icon/Filters/down.svg"
 import up from "../../shared/icon/Filters/up.svg"
-import active from "../../shared/icon/Filters/active.svg"
 import { IFilter } from "./const"
 
 export function Filter({ filter }: { filter: IFilter }) {
   const [currItem, setCurrItem] = useState(filter.title)
 
-  function chooseIcon() {
-    return currItem === filter.title ? down : up
-  }
-
   return (
-    <div className="group relative cursor-pointer hover:text-[#002CFB] h-[40px] pb-[14px] flex gap-2 items-center">
+    <div
+      className={
+        currItem === filter.title
+          ? "group relative cursor-pointer hover:text-[#002CFB] h-[40px] pb-[14px] flex gap-2 items-center"
+          : "group relative cursor-pointer hover:text-[#002CFB] h-[40px] pb-[14px] flex gap-2 items-center text-[#002CFB]"
+      }
+    >
       <span>{currItem}</span>
-      <img src={chooseIcon()} alt="" />
+      {currItem === filter.title ? (
+        <div className="group-hover:stroke-[#002CFB]">
+          <DownSvg />
+        </div>
+      ) : (
+        <img src={up} alt="" />
+      )}
       <ul className="hidden group-hover:block list-none absolute top-[40px] right-0 max-h-[320px] w-[204px] shadow-large bg-white rounded">
         {filter.options.map((item: string) => (
           <li

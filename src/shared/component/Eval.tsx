@@ -5,11 +5,7 @@ import bad from "../icon/Eval/dot.svg"
 
 export type EvalType = "Отлично" | "Хорошо" | "Плохо"
 
-interface EvalProps {
-  title: EvalType
-}
-
-export function Eval({ title }: EvalProps) {
+export function Eval({ title }: { title: EvalType }) {
   let icon, className
   switch (title) {
     case "Отлично":
