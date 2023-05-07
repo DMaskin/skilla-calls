@@ -1,6 +1,9 @@
+import avatar from "../../shared/img/Header/avatar.png"
+
 export type IFilter = {
   title: string,
-  options: string[]
+  options: string[],
+  avatars?: string[]
 }
 
 export const filters: IFilter[] = [{
@@ -9,6 +12,7 @@ export const filters: IFilter[] = [{
   },{
     title: "Все сотрудники",
     options: ["Все сотрудники", "Константик К.", "Полина З."],
+    avatars: ["", avatar, avatar]
   },{
     title: "Все звонки",
     options: ["Все звонки", "Все клиенты", "Новые клиенты", "Все исполнители", "Через приложение", "Прочие звонки"],
