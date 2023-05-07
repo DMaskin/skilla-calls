@@ -2,9 +2,35 @@ import React, { useState } from "react"
 import { IFilter } from "./const"
 import up from "../../shared/icon/Filters/up.svg"
 import { ReactComponent as DownSvg } from "../../shared/icon/Filters/down.svg"
+import {useAppDispatch} from "../../app/hooks";
+import {filterByCallType, filterBySource} from "../CallTable/callTableSlice";
 
 export function Filter({ filter }: { filter: IFilter }) {
   const [currItem, setCurrItem] = useState(filter.title)
+  const dispatch = useAppDispatch()
+
+  function optionClickHandler(item: string) {
+    setCurrItem(item)
+    if (item === filter.title)
+      return
+    switch (filter.title) {
+      case "Все типы":
+        const in_out = item === "Входящие"
+        dispatch(filterByCallType(in_out))
+        break
+      case "Все сотрудники":
+        break
+      case "Все звонки":
+        break
+      case "Все источники":
+        dispatch(filterBySource(item))
+        break
+      case "Все оценки":
+        break
+      case "Все ошибки":
+        break
+    }
+  }
 
   return (
     <div
@@ -26,10 +52,10 @@ export function Filter({ filter }: { filter: IFilter }) {
         {filter.options.map((item: string, idx) => (
           <li
             key={item}
-            onClick={() => setCurrItem(item)}
+            onClick={() => optionClickHandler(item)}
             className="py-2 px-4 text-[#899CB1] hover:bg-[#D8E4FB] hover:text-[#122945] transition-colors cursor-pointer first:text-[#002CFB] first:hover:bg-white first:hover:text-[#002CFB] first:rounded-t last:rounded-b flex items-center gap-[10px]"
           >
-            {filter.avatars?.length && <img src={filter.avatars[idx]} alt=""/>}
+            {filter.avatars?.length && <img src={filter.avatars[idx]} alt="" />}
             {item}
           </li>
         ))}

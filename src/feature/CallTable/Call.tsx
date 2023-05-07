@@ -36,7 +36,7 @@ export function Call({ call }: { call: ICall }) {
         <div>{call.in_out ? call.from_number : call.to_number}</div>
       </div>
       <div className="h-full w-full flex justify-start items-center">
-        <span className="text-[#5E7793]">{call.contact_company}</span>
+        <span className="text-[#5E7793]">{call.source}</span>
       </div>
       <div className="h-full w-full flex justify-start items-center">
         <span>

@@ -17,7 +17,7 @@ export interface ICall {
   status: string
   record: string
   line_number: string
-  in_out: number
+  in_out: boolean
   from_site: number
   source: string
   errors: string[]
