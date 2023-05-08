@@ -39,4 +39,5 @@ export interface ICall {
   person_name: string
   person_surname: string
   person_avatar: string
+  error: string
 }

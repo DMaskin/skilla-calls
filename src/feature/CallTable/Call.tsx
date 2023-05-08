@@ -46,7 +46,7 @@ export function Call({ call }: { call: ICall }) {
                 {title}
               </div>
             ))
-          ) : (
+          ) : ((call as any).evalStatus &&
             <Eval title={(call as any).evalStatus as EvalType} />
           )}
         </span>
