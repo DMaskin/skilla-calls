@@ -24,3 +24,12 @@ body {
     minmax(30px, 20fr)
     minmax(30px, 40fr);
 }
+
+progress::-webkit-progress-bar {
+  background-color: #ADBFDF;
+  border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #002CFB;
+}
