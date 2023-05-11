@@ -1,7 +1,4 @@
 import React, { useState } from "react"
-import { IFilter } from "./const"
-import up from "../../shared/icon/Filters/up.svg"
-import { ReactComponent as DownSvg } from "../../shared/icon/Filters/down.svg"
 import { useAppDispatch } from "../../app/hooks"
 import {
   deleteFilter,
@@ -11,6 +8,9 @@ import {
   filterByEval,
   filterBySource,
 } from "../CallTable/callTableSlice"
+import { IFilter } from "./const"
+import up from "../../shared/icon/Filters/up.svg"
+import { ReactComponent as DownSvg } from "../../shared/icon/Filters/down.svg"
 
 export function Filter({ filter }: { filter: IFilter }) {
   const [currItem, setCurrItem] = useState<string | React.ReactElement>(filter.title)

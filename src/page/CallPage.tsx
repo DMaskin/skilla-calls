@@ -10,7 +10,7 @@ export function CallPage() {
   return (
     <div className="flex flex-row w-full h-[100vh]">
       <Navbar />
-      <div className="bg-mainBackground w-full h-full">
+      <div className="bg-mainBackground w-full h-full pb-20">
         <Header />
         <ProfileInfoGroup />
         <div className="ml-[120px] mr-[120px] mt-[34px] flex justify-between text-[14px] text-[#5E7793]">

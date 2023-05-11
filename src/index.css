@@ -8,7 +8,6 @@ body {
   font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 400;
-
 }
 
 .callsTable {
@@ -27,9 +26,10 @@ body {
 
 progress::-webkit-progress-bar {
   background-color: #ADBFDF;
-  border-radius: 5px;
+  border-radius: 50px;
 }
 
 progress::-webkit-progress-value {
   background-color: #002CFB;
+  border-radius: 50px;
 }
