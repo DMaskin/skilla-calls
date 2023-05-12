@@ -10,10 +10,10 @@ export interface CallTableState {
 }
 
 type FilterType = {
-  in_out?: boolean
-  source?: string
-  person_name?: string,
-  error: string,
+  in_out: boolean
+  source: string
+  person_name: string
+  error: string
 }
 
 const initialState: CallTableState = {
@@ -30,19 +30,16 @@ export const callTableSlice = createSlice({
       state.calls = action.payload.map((call) => {
         if (call.errors.length) {
           const error = call.errors[0]
-          return {...call, error}
-        }
-        else if (call.time > 0) {
+          return { ...call, error }
+        } else if (call.time > 0) {
           return { ...call, evalStatus: getRandomStatus() }
         }
-        return {...call}
-        // return call.time > 0 && !call.errors.length ? { ...call, evalStatus: getRandomStatus() } : { ...call }
+        return { ...call }
       })
-      // mock data
       state.calls[1] = { ...state.calls[1], person_name: "Константик К." }
-      state.calls[3] = { ...state.calls[3], source: "Yandex.ru" }
+      state.calls[3] = { ...state.calls[3], source: "Yandex" }
       state.calls[4] = { ...state.calls[4], person_name: "Полина З." }
-      state.calls[5] = { ...state.calls[5], source: "Rambler.ru" }
+      state.calls[5] = { ...state.calls[5], source: "Rambler" }
       state.unfilteredCalls = state.calls
     },
     filterByCallType: (state, action: PayloadAction<boolean>) => {
@@ -58,8 +55,6 @@ export const callTableSlice = createSlice({
       callTableSlice.caseReducers.defaultFilter(state)
     },
     filterByEval: (state, action: PayloadAction<string>) => {
-      // console.log(action.payload)
-      // if (action.payload === "Скрипт не распознан")
       state.filterObj.evalStatus = action.payload
       callTableSlice.caseReducers.defaultFilter(state)
     },
@@ -96,15 +91,21 @@ export const callTableSlice = createSlice({
           field = ""
       }
       delete state.filterObj[field]
-      console.log(Object.keys(state.filterObj))
-      console.log(Object.values(state.filterObj))
       state.calls = state.unfilteredCalls
       callTableSlice.caseReducers.defaultFilter(state)
     },
   },
 })
 
-export const { setCalls, filterByCallType, filterBySource, deleteFilter, filterByEmployee, filterByEval, filterByErrors } = callTableSlice.actions
+export const {
+  setCalls,
+  filterByCallType,
+  filterBySource,
+  deleteFilter,
+  filterByEmployee,
+  filterByEval,
+  filterByErrors,
+} = callTableSlice.actions
 
 export const selectCalls = (state: RootState) => state.callTable.calls
 

@@ -24,7 +24,7 @@ export const filters: IFilter[] = [
   },
   {
     title: "Все источники",
-    options: ["Все источники", "Yandex.ru", "Rambler.ru"],
+    options: ["Все источники", "Yandex", "Rambler"],
   },
   {
     title: "Все оценки",

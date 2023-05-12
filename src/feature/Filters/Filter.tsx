@@ -16,9 +16,6 @@ export function Filter({ filter }: { filter: IFilter }) {
   const [currItem, setCurrItem] = useState<string | React.ReactElement>(filter.title)
   const dispatch = useAppDispatch()
 
-  // Такой некрасивый код, потому что в ответе от сервера не очень хорошая
-  // структура. И не все данные отображаются, если взглянуть на макет
-
   function optionClickHandler(item: string | React.ReactElement) {
     setCurrItem(item)
 

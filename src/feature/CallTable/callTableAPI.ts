@@ -7,7 +7,9 @@ export async function fetchCalls(limit = 50) {
 
 export async function fetchAudio(id: string) {
   const { data } = await $host.post(
-    `/getRecord?record=${id}`, {}, {
+    `/getRecord?record=${id}`,
+    {},
+    {
       responseType: "arraybuffer",
       headers: {
         "Content-Type": ["audio/mpeg", "audio/x-mpeg", "audio/x-mpeg-3", "audio/mpeg3"],

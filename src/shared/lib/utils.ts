@@ -19,8 +19,21 @@ export function getRandomStatus(): EvalType {
 
 export function getCurrentDate(): string {
   const date = new Date()
-  const weekDay = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"][date.getDay()];
+  const weekDay = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"][date.getDay()]
   const day = date.getDate()
-  const month = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентрября", "октября", "ноября", "декабря"][date.getUTCMonth()]
+  const month = [
+    "января",
+    "февраля",
+    "марта",
+    "апреля",
+    "мая",
+    "июня",
+    "июля",
+    "августа",
+    "сентрября",
+    "октября",
+    "ноября",
+    "декабря",
+  ][date.getUTCMonth()]
   return `${weekDay}, ${day} ${month}`
 }

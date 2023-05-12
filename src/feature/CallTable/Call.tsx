@@ -40,15 +40,13 @@ export function Call({ call }: { call: ICall }) {
       </div>
       <div className="h-full w-full flex justify-start items-center">
         <span>
-          {call.errors.length ? (
-            call.errors.map((title, idx) => (
-              <div key={idx} className="text-[#EA1A4F]">
-                {title}
-              </div>
-            ))
-          ) : ((call as any).evalStatus &&
-            <Eval title={(call as any).evalStatus as EvalType} />
-          )}
+          {call.errors.length
+            ? call.errors.map((title, idx) => (
+                <div key={idx} className="text-[#EA1A4F]">
+                  {title}
+                </div>
+              ))
+            : (call as any).evalStatus && <Eval title={(call as any).evalStatus as EvalType} />}
         </span>
       </div>
       <div className="h-full w-full flex justify-end items-center">

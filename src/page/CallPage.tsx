@@ -1,10 +1,10 @@
 import React from "react"
 import { Navbar } from "../shared/component/Navbar"
-import {Header} from "../shared/component/Header";
-import {ProfileInfoGroup} from "../shared/component/ProfileInfoGroup";
-import {Search} from "../feature/Search/Search";
-import {Filters} from "../feature/Filters/Filters";
-import {CallTable} from "../feature/CallTable/CallTable";
+import { Header } from "../shared/component/Header"
+import { ProfileInfoGroup } from "../shared/component/ProfileInfoGroup"
+import { Search } from "../feature/Search/Search"
+import { Filters } from "../feature/Filters/Filters"
+import { CallTable } from "../feature/CallTable/CallTable"
 
 export function CallPage() {
   return (
