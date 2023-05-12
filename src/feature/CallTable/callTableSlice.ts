@@ -13,7 +13,7 @@ type FilterType = {
   in_out?: boolean
   source?: string
   person_name?: string,
-  error: string
+  error: string,
 }
 
 const initialState: CallTableState = {
@@ -58,7 +58,8 @@ export const callTableSlice = createSlice({
       callTableSlice.caseReducers.defaultFilter(state)
     },
     filterByEval: (state, action: PayloadAction<string>) => {
-      if (action.payload === "скрипт не ")
+      // console.log(action.payload)
+      // if (action.payload === "Скрипт не распознан")
       state.filterObj.evalStatus = action.payload
       callTableSlice.caseReducers.defaultFilter(state)
     },
@@ -95,6 +96,8 @@ export const callTableSlice = createSlice({
           field = ""
       }
       delete state.filterObj[field]
+      console.log(Object.keys(state.filterObj))
+      console.log(Object.values(state.filterObj))
       state.calls = state.unfilteredCalls
       callTableSlice.caseReducers.defaultFilter(state)
     },

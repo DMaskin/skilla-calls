@@ -23,13 +23,15 @@ export function Filter({ filter }: { filter: IFilter }) {
     setCurrItem(item)
 
     if (typeof item !== "string") {
-      item = item.props["title"]
-      dispatch(filterByEval(item as string))
+      const evalStatus = item.props["title"]
+      dispatch(filterByEval(evalStatus))
+      return
     }
 
     if (item === filter.title) {
-      if (currItem === "Скрипт не использован") {
+      if (item === "Все оценки") {
         dispatch(deleteFilter("Скрипт не использован"))
+        dispatch(deleteFilter("Все оценки"))
       }
       dispatch(deleteFilter(item))
       return
