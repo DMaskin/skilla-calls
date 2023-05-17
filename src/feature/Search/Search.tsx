@@ -4,21 +4,16 @@ import hoveredSearch from "../../shared/icon/Search/hoveredSearch.svg"
 
 export function Search() {
   const [search, setSearch] = useState("")
-  const [users, setUsers] = useState([] as string[])
+  const [users, setUsers] = useState(["Василий", "Григорий", "Максим", "Петя", "Иван"])
   const [dropdownVisible, setDropdownVisible] = useState(false)
-
-  function getUsers() {
-    setUsers(["Василий", "Григорий", "Максим", "Петя", "Иван"])
-  }
 
   function searchChangeHandler(value: string) {
     setSearch(value)
-    getUsers()
   }
 
   return (
     <div className="relative max-w-[260px]">
-      <img src={searchIcon} className="absolute py-3 px-[18px]" alt="" />
+      <img src={searchIcon} className="absolute py-2.5 px-[18px]" alt="" />
       <input
         type="text"
         placeholder={"Поиск по звонкам"}
